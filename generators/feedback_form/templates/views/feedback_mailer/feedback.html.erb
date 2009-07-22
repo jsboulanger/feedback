@@ -1,0 +1,10 @@
+Dear site administrator,
+
+You're lucky today, you've got feedback from your users:
+
+Subject: <%=h @feedback.subject %>
+User's email: <%=h @feedback.email %>
+Sent at: <%= Time.now %>
+
+Comment: 
+<%=h @feedback.comment %>

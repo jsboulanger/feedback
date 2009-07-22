@@ -1,0 +1,91 @@
+= Feedback Plugin for Rails
+
+Feedback is a Ruby on Rails plugin that adds an ajax-based 
+overlay feedback form triggered by a side-screen tab or a link. 
+The result of the feedback form is sent through a ActionMailer.
+
+The plugin was inspired from the "feedback" widget of 
+GetSatisfaction.com and UserVoice.com. 
+
+The plugin uses a generator to generate boiler-plate Javascript,
+CSS, HTML, and ruby code into your application.
+It sets up a ready to use feedback form (with minimal styling)
+that you can further customize.
+
+== Features
+
+* Helper to display a sticky "feedback" tab.
+* Display feedback form as an overlay with Ajax.
+* Sends feedback result by email through an ActionMailer.
+* Uses a generator such that you can customize the code and style to fit your app.
+* Generates unit and functional tests.
+* Works with Prototype and JQuery, choose through a generators flag.
+* Currently supports IE6, IE7, IE8, FF2, FF3, Chrome2 and SafariX
+
+Demo: http://jsboulanger.com/feedback_plugin/demo.html
+
+== Motivation
+
+Collecting feedback from users is really important. Third-party services
+such as GetSatisfaction.com and UserVoice.com are awesome tools to manage your feedback. 
+However, we found out that in many instances such as for small sites or back-ends, we wanted 
+a similar feedback form integration/experience but simpler, local, and customized.
+
+
+== Install and Getting Started
+
+Install the plugin:
+
+  ruby script/plugin install git://github.com/jboula/feedback.git
+
+Run the generator:
+
+  ruby script/generate feedback_form
+
+By default it will generate the Prototype code, you can use jQuery if you prefer:
+
+  ruby script/generate feedback_form --jquery
+
+
+Make sure Prototype is included in your header:
+
+  <%= javascript_include_tag :defaults %>
+
+
+Include the feedback.css and the prototype.feedback.js files into your header.
+There is a helper to do that:
+
+  <%= feedback_includes %>
+
+
+To add a sticky 'feedback' tab to your site, in the header place:
+
+  <%= feedback_tab(:position => 'top') %>
+
+
+Configure the action mailer in app/models/feedback_mailer.rb
+
+
+
+== Limitations (TODOs)
+
+* No unit tests for Javascript
+* Feedback PNG with transparency supported by IE6
+* Graceful fallback if Javascript is not enabled/supported
+* More customization options through helpers: (overlay style, tab color, etc...)
+
+
+== Acknowledgements
+
+
+Thanks to GetSatisfaction.com for the
+idea of the "feedback" tab.
+
+Part of this plugin was inspired from other software.
+Thanks to their respective authors.
+* Facebox: http://famspam.com/facebox
+* restful_authentication: http://github.com/technoweenie/restful-authentication/tree/master
+
+
+
+Copyright (c) 2009 Jean-Sebastien Boulanger (jsboulanger.com), released under the MIT license
