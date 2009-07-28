@@ -36,7 +36,7 @@ a similar feedback form integration/experience but simpler, local, and customize
 
 Install the plugin:
 
-  ruby script/plugin install git://github.com/jboula/feedback.git
+  ruby script/plugin install git://github.com/jsboulanger/feedback.git
 
 Run the generator:
 
@@ -88,4 +88,6 @@ Thanks to their respective authors.
 
 
 
-Copyright (c) 2009 Jean-Sebastien Boulanger (jsboulanger.com), released under the MIT license
+Copyright (c) 2009 Jean-Sebastien Boulanger <jsboulanger@gmail.com>, released under the MIT license
+
+http://jsboulanger.com
