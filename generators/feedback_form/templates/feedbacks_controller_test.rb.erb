@@ -23,22 +23,7 @@ class <%= controller_class_name %>Test < ActionController::TestCase
     assert :success # Doesn't test much  
     assert_nil @error_message
   end
-  
-  def test_should_have_feedback_ajax_request
-    get :new
-    assert_select "form#feedback_form[onsubmit=?]", Regexp.new("#{Regexp.escape("new Ajax.Request('/feedbacks'")}.*")
-  end
-  
-  def test_should_have_ajax_with_complete_callback_to_submitted
-    get :new
-    assert_select "form#feedback_form[onsubmit=?]", Regexp.new(".*#{Regexp.escape("onComplete:function(request){Feedback.submitted(request);}")}.*")
-  end
-  
-  def test_should_have_ajax_with_create_callback_to_loading
-    get :new
-    assert_select "form#feedback_form[onsubmit=?]", Regexp.new(".*#{Regexp.escape("onCreate:function(request){Feedback.loading('Sending...');}")}.*")
-  end
-    
+     
   
   def test_should_set_error_message_when_not_valid
     post :create, :feedback => {:comment => ""}
