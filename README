@@ -65,6 +65,63 @@ To add a sticky 'feedback' tab to your site, in the header place:
 
 Configure the action mailer in app/models/feedback_mailer.rb
 
+  def feedback(feedback)
+    @recipients = 'you@yoursite.com'
+    @from = 'system@yoursite.com'
+    @subject = "[Feedback for YourSite.com] #{feedback.subject}"
+    ...
+  
+
+== How-to's
+
+=== How to customize the position of the feedback tab?
+
+The feedback_tab helper takes the option "position" which has four different values (top|bottom|left|right)
+that corresponds to class in the feedback.css file. You can fine tune the position by changing the left/right, top/bottom
+attributes of those css classes.
+
+=== How to trigger the feedback form from a custom link?
+
+The feedback_link(text, options={}) helper allows you the create a link that will trigger the feedback form.
+
+  <%= feedback_link "Leave us feedback!" %>
+
+Your layout header must also have the includes:
+
+  <%= feedback_includes %>
+
+
+=== How to customize the email message?
+
+Edit the /app/views/feedback_mailer/feedback.html.erb generated file in your app
+
+
+=== How to store the feedback results in the database?
+
+Feedback generates a model that is not an active record model. In order to store the feedbacks in your database, make it
+an active record model:
+
+  class Feedback < ActiveRecord::Base
+    validates_presence_of :comment
+  end
+
+You must also write a migration to create your table:
+
+  class CreateFeedbacks < ActiveRecord::Migration
+    def self.up
+      create_table :feedbacks do |t|
+        t.string :subject
+        t.string :email
+        t.text   :comment
+        t.timestamps
+      end
+    end
+
+    def self.down
+      drop_table :feedbacks
+    end
+  end
+
 
 
 == Limitations (TODOs)
