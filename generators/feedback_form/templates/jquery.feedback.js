@@ -64,6 +64,7 @@
       $(settings.modalContent).load(settings.formUrl, null, function() {
         $(settings.form).submit(submitFeedback);
       });
+      return false;
     });	
   };
   
@@ -110,6 +111,7 @@
       $("body").append(settings.feedbackHtml);
       $(settings.closeLink).click(function() {
         hideFeedback();
+        return false;
       });		
       setBoxPosition();			
     }

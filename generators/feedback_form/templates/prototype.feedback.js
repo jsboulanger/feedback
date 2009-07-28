@@ -110,6 +110,7 @@ if(Feedback == undefined) {
       $$("body").first().insert(this.settings.feedbackHtml);
       $(this.settings.closeLink).observe('click', function(){
         Feedback.hideFeedback();
+        return false;
       });
       Feedback.setWindowPosition();
     }
