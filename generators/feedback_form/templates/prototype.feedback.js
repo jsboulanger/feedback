@@ -66,8 +66,7 @@ if(Feedback == undefined) {
   }
 	
   Feedback.submitFeedback = function(event){
-		//TODO Set feedback[page] hidden url to current page
-		// in Jquery its $('input[name=feedback\\[page\\]]').val(location.href);
+		$('feedback_page').value = location.href;
     var data = Form.serialize($(Feedback.settings.form));
     var url = $(Feedback.settings.form).action;
     Feedback.loading(Feedback.settings.sendingText);
