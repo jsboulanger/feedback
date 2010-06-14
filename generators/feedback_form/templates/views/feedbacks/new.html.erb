@@ -1,6 +1,7 @@
 <h1>Feedback</h1>
 <p>Please leave us feedback, it's really appreciated.</p>
 <% form_for :feedback, @feedback, :url => feedback_path, :html => {:id => "feedback_form"} do |f| -%>
+<%= f.hidden_field 'page' %>
 <% unless @error_message.blank? %>
 <p class="error">
 	<%=h @error_message %>

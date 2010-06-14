@@ -69,6 +69,7 @@
   };
   
   var submitFeedback = function() {
+		$('input[name=feedback\\[page\\]]').val(location.href);
     var data = $(settings.form).serialize();
     var url = $.trim($(settings.form).attr('action'));
     loading(settings.sendingText);
