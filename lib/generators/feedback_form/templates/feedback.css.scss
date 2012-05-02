@@ -1,0 +1,93 @@
+div#feedback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100001; }
+
+a {
+  &#feedback_link {
+    position: fixed;
+    z-index: 99999;
+    background-color: #CC0000;
+    width: 26px;
+    height: 96px;
+    overflow: hidden;
+    background: #cc0000 url(/assets/feedback/feedback_tab.png);
+    _position: absolute;
+    /*_background-image: url(/assets/feedback/feedback_tab.png);*/
+    &:hover {
+      background-color: #999; }
+    &.left {
+      left: 0;
+      top: 25%;
+      width: 26px;
+      height: 96px;
+      background-image: url(/assets/feedback/feedback_tab.png);
+      _background-image: url(/assets/feedback/feedback_tab.png); }
+    &.right {
+      right: 0;
+      top: 25%;
+      width: 26px;
+      height: 96px;
+      background-image: url(/assets/feedback/feedback_tab.png);
+      _background-image: url(/assets/feedback/feedback_tab.png); }
+    &.top {
+      right: 10%;
+      top: 0;
+      width: 96px;
+      height: 26px;
+      background-image: url(/assets/feedback/feedback_tab_h.png);
+      _background-image: url(/assets/feedback/feedback_tab_h.png); }
+    &.bottom {
+      right: 10%;
+      bottom: 0;
+      width: 96px;
+      height: 26px;
+      background-image: url(/assets/feedback/feedback_tab_h.png);
+      _background-image: url(/assets/feedback/feedback_tab_h.png); } }
+  &#feedback_close_link {
+    right: 5pt;
+    top: 3pt;
+    position: absolute;
+    height: 22px;
+    width: 66px;
+    background-image: url(/assets/feedback/closelabel.gif);
+    _background-image: url(/assets/feedback/closelabel.gif); } }
+
+div {
+  &#feedback_modal_window {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFFFFF; }
+  &#feedback_modal_content, &#feedback_loading {
+    padding: 12px; } }
+
+#feedback_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: alpha(opacity = 50); }
+
+.feedback_hide {
+  z-index: -100; }
+
+.feedback_overlayBG {
+  background-color: #000;
+  z-index: 100000; }
+
+* html #feedback_overlay {
+  /* ie6 hack */
+  position: absolute;
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px'); }
+
+form#feedback_form .error {
+  color: red;
+  font-weight: bold; }
