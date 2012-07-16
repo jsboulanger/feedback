@@ -5,6 +5,7 @@ class <%= model_class_name %>
     self.subject = params[:subject]
     self.email = params[:email]
     self.comment = params[:comment]
+    self.page = params[:page]
   end
   
   def valid?
