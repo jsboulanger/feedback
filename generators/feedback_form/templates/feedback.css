@@ -1,14 +1,14 @@
 
 div#feedback {
-  position: absolute;	
+  position: absolute;
   top: 0;
-  left: 0;			
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 100001;
 }
-			
-a#feedback_link {				
+
+a#feedback_link {
   position: fixed;
   z-index: 99999;
   background-color: #CC0000;
@@ -18,12 +18,12 @@ a#feedback_link {
   background: #C00 url(/images/feedback/feedback_tab.png);
   _position: absolute;
   /*_background-image: url(/images/feedback/feedback_tab.png);*/
-}	
-  
+}
+
 a#feedback_link:hover {
   background-color: #999;
 }
-			
+
 a#feedback_link.left {
   left: 0;
   top: 25%;
@@ -59,7 +59,7 @@ a#feedback_link.bottom {
   background-image: url(/images/feedback/feedback_tab_h.png);
   _background-image: url(/images/feedback/feedback_tab_h.png);
 }
-			
+
 a#feedback_close_link {
   right: 5pt;
   top: 3pt;
@@ -72,19 +72,19 @@ a#feedback_close_link {
 
 div#feedback_modal_window {
   width: 300px;
-  margin: 0 auto;				
+  margin: 0 auto;
   position: relative;
   background-color: #FFFFFF;
 }
-			
-div#feedback_modal_content {				
-  padding: 12px;				
+
+div#feedback_modal_content {
+  padding: 12px;
 }
-			
-div#feedback_loading {				
-  padding: 12px;				
+
+div#feedback_loading {
+  padding: 12px;
 }
-			
+
 #feedback_overlay {
   position: fixed;
   top: 0px;
@@ -96,7 +96,7 @@ div#feedback_loading {
   -moz-opacity: 0.5;
   filter:alpha(opacity=50);
 }
-			
+
 .feedback_hide {
   z-index:-100;
 }
@@ -105,12 +105,12 @@ div#feedback_loading {
   background-color: #000;
   z-index: 100000;
 }
-			
+
 * html #feedback_overlay { /* ie6 hack */
   position: absolute;
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 }
-			
+
 form#feedback_form .error {
   color: red;
   font-weight: bold;

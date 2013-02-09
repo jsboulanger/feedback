@@ -2,7 +2,7 @@ class <%= controller_class_name %> < ApplicationController
   layout false
   
   def new
-    @feedback = <%= model_class_name %>.new    
+    @feedback = <%= model_class_name %>.new(page: request.referer)    
   end
   
   def create
