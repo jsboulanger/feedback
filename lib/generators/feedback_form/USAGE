@@ -1,0 +1,5 @@
+rails generate feedback_form [NAME]
+
+The [NAME] is optional and will be used to
+name all classes and files, the default is: feedback
+It should be singular.

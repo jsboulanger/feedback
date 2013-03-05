@@ -1,16 +1,17 @@
 = Feedback Plugin for Rails
 
-Feedback is a Ruby on Rails plugin that adds an ajax-based 
-overlay feedback form triggered by a side-screen tab or a link. 
+Feedback is a Ruby on Rails plugin that adds an ajax-based
+overlay feedback form triggered by a side-screen tab or a link.
 The result of the feedback form is sent through a ActionMailer.
 
-The plugin was inspired from the "feedback" widget of 
-GetSatisfaction.com and UserVoice.com. 
+The plugin was inspired from the "feedback" widget of
+GetSatisfaction.com and UserVoice.com.
 
 The plugin uses a generator to generate boiler-plate Javascript,
 CSS, HTML, and ruby code into your application.
 It sets up a ready to use feedback form (with minimal styling)
 that you can further customize.
+
 
 == Features
 
@@ -26,12 +27,14 @@ that you can further customize.
 == Motivation
 
 Collecting feedback from users is really important. Third-party services
-such as GetSatisfaction.com and UserVoice.com are awesome tools to manage your feedback. 
-However, we found out that in many instances such as for small sites or back-ends, we wanted 
+such as GetSatisfaction.com and UserVoice.com are awesome tools to manage your feedback.
+However, we found out that in many instances such as for small sites or back-ends, we wanted
 a similar feedback form integration/experience but simpler, local, and customized.
 
 
 == Install and Getting Started
+
+=== for Rails 2.x
 
 Install the plugin:
 
@@ -45,22 +48,29 @@ By default it will generate the Prototype code, you can use jQuery if you prefer
 
   ruby script/generate feedback_form --jquery
 
+=== for Rails 3.x
 
-Make sure Prototype is included in your header:
+Install the generator:
 
-  <%= javascript_include_tag :defaults %>
+  git clone git://github.com/dohkoos/feedback.git
+  cp feedback/lib/generators/feedback_form [YOUR_PROJECT_NAME]/lib/generators
 
+Run the generator:
 
-Include the feedback.css and the prototype.feedback.js files into your header.
+  rails generate feedback_form
+
+By default it will generate the jQuery code, you can use Prototype if you prefer:
+
+  rails generate feedback_form --skip-jquery
+
+Include the feedback.css and the jquery.feedback.js/prototype.feedback.js files into your header.
 There is a helper to do that:
 
   <%= feedback_includes %>
 
-
 To add a sticky 'feedback' tab to your site, in the header place:
 
   <%= feedback_tab(:position => 'top') %>
-
 
 Configure the action mailer in app/models/feedback_mailer.rb
 
@@ -69,7 +79,7 @@ Configure the action mailer in app/models/feedback_mailer.rb
     @from = 'system@yoursite.com'
     @subject = "[Feedback for YourSite.com] #{feedback.subject}"
     ...
-  
+
 
 == How-to's
 
@@ -101,7 +111,10 @@ Feedback generates a model that is not an active record model. In order to store
 an active record model:
 
   class Feedback < ActiveRecord::Base
-    validates_presence_of :comment
+    attr_accessible :comment, :email, :subject, :page
+
+    validates :subject, :presence => true
+    validates :comment, :presence => true
   end
 
 You must also write a migration to create your table:
@@ -122,7 +135,6 @@ You must also write a migration to create your table:
   end
 
 
-
 == Limitations (TODOs)
 
 * No unit tests for Javascript
@@ -133,7 +145,6 @@ You must also write a migration to create your table:
 
 == Acknowledgements
 
-
 Thanks to GetSatisfaction.com for the
 idea of the "feedback" tab.
 
@@ -141,8 +152,6 @@ Part of this plugin was inspired from other software.
 Thanks to their respective authors.
 * Facebox: http://famspam.com/facebox
 * restful_authentication: http://github.com/technoweenie/restful-authentication/tree/master
-
-
 
 Copyright (c) 2009 Jean-Sebastien Boulanger <jsboulanger@gmail.com>, released under the MIT license
 
