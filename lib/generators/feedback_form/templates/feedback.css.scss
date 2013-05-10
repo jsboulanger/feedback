@@ -14,9 +14,9 @@ a {
     width: 26px;
     height: 96px;
     overflow: hidden;
-    background: #cc0000 url(/assets/feedback/feedback_tab.png);
+    background: #c00 image-url('feedback/feedback_tab.png');
     _position: absolute;
-    /*_background-image: url(/assets/feedback/feedback_tab.png);*/
+    /*_background-image: image-url('feedback/feedback_tab.png');*/
     &:hover {
       background-color: #999; }
     &.left {
@@ -24,37 +24,37 @@ a {
       top: 25%;
       width: 26px;
       height: 96px;
-      background-image: url(/assets/feedback/feedback_tab.png);
-      _background-image: url(/assets/feedback/feedback_tab.png); }
+      background-image: image-url('feedback/feedback_tab.png');
+      _background-image: image-url('feedback/feedback_tab.png'); }
     &.right {
       right: 0;
       top: 25%;
       width: 26px;
       height: 96px;
-      background-image: url(/assets/feedback/feedback_tab.png);
-      _background-image: url(/assets/feedback/feedback_tab.png); }
+      background-image: image-url('feedback/feedback_tab.png');
+      _background-image: image-url('feedback/feedback_tab.png'); }
     &.top {
       right: 10%;
       top: 0;
       width: 96px;
       height: 26px;
-      background-image: url(/assets/feedback/feedback_tab_h.png);
-      _background-image: url(/assets/feedback/feedback_tab_h.png); }
+      background-image: image-url('feedback/feedback_tab_h.png');
+      _background-image: image-url('feedback/feedback_tab_h.png'); }
     &.bottom {
       right: 10%;
       bottom: 0;
       width: 96px;
       height: 26px;
-      background-image: url(/assets/feedback/feedback_tab_h.png);
-      _background-image: url(/assets/feedback/feedback_tab_h.png); } }
+      background-image: image-url('feedback/feedback_tab_h.png');
+      _background-image: image-url('feedback/feedback_tab_h.png'); } }
   &#feedback_close_link {
     right: 5pt;
     top: 3pt;
     position: absolute;
     height: 22px;
     width: 66px;
-    background-image: url(/assets/feedback/closelabel.gif);
-    _background-image: url(/assets/feedback/closelabel.gif); } }
+    background-image: image-url('feedback/closelabel.gif');
+    _background-image: image-url('feedback/closelabel.gif'); } }
 
 div {
   &#feedback_modal_window {
