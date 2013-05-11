@@ -23,7 +23,7 @@ class FeedbackFormGenerator < Rails::Generators::Base
   end
 
   def add_javascript
-    file_name = options[:jquery] ? 'jquery.feedback.js' : 'prototype.feedback.js'
+    file_name = options[:jquery] ? 'jquery.feedback.js.coffee' : 'prototype.feedback.js.coffee'
     copy_file file_name, "app/assets/javascripts/#{file_name}"
   end
 

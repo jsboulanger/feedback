@@ -11,13 +11,8 @@ module <%= helper_class_name %>
 
     options['position'] = "'#{options['position']}'" unless options['position'].blank? || options['position'] == 'null'
     content_tag 'script', :type => "text/javascript" do
-      "document.observe(\"dom:loaded\", function() { Feedback.init({tabPosition: #{options["position"]}}); });"
+      "document.observe(\"dom:loaded\", function() { Feedback.init({tabPosition: #{options["position"]}}); });".html_safe
     end
-  end
-
-  def feedback_includes()
-    stylesheet_link_tag('feedback') +
-    javascript_include_tag('prototype.feedback.js')
   end
 
   def feedback_link(text, options = {})
